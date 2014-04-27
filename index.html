@@ -4,17 +4,16 @@
         <div id="text"></div>
         <script type="text/javascript">
             var div = document.getElementById("text");
-            function start() {
+            div.textContent = "Hello.";
+            var interval = setInterval(function() { startup() }, 5000)
+            function startup() {
                 div.textContent = "Are you scared?";
+                stop();
             }
             function stop() {
                 div.textContent = "You should be.";
+                clearInterval(interval);
             }
         </script>
     </head>
-    <body>
-        <button onclick="start()">Start</button>
-        <br/>
-        <button onclick="stop()">Stop</button>
-    </body>
 </html>
