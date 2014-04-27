@@ -40,24 +40,20 @@
                 if (!has_searched_room) {
                     has_searched_room = !has_searched_room;
                     item_div.innerHTML += "Coins: 5<br/>";
-                    below_div.innerHTML = '<button onclick="downstairs()">Go downstairs</button><br/>You find some coins.'
+                    below_div.innerHTML = '<button onclick="downstairs()">Go downstairs</button><br/>You find some coins.';
                 }
             }
             function outside() {
 
             }
             function search_kitchen() {
-                below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/>';
-                if (!has_searched_kitchen) {
-                    below_div.innerHTML += '<button onclick="search_kitchen_protection">Search the kitchen</button>';
-                }
-            }
-            function search_kitchen_protection() {
                 if (!has_searched_kitchen) {
                     has_searched_kitchen = !has_searched_kitchen;
                     item_div.innerHTML += "Seeds: 3<br/>";
-                    below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/>You find some seeds.'
-                } 
+                    below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/>You find some seeds.';
+                } else {
+                    below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/>You don\'t find anything.';
+                }
             }
         </script>
         <div id="forest">
