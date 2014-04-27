@@ -76,7 +76,7 @@
             }
             function outside() {
                 div.textContent = "You need to visit the blacksmith.";
-                below_div.innerHTML = '<button onclick="clear_blacksmith()">Go to the blacksmith</button><br/><button onclick="downstairs()">Go to your house</button><br/><button onclick="feed_birds">Feed the birds</button>';
+                below_div.innerHTML = '<button onclick="clear_blacksmith()">Go to the blacksmith</button><br/><button onclick="downstairs()">Go to your house</button><br/><button onclick="feed_birds()">Feed the birds</button>';
                 if (has_fed_birds) {
                     below_div.innerHTML = below_div.innerHTML.length - 54;
                 }
