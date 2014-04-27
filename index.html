@@ -13,13 +13,13 @@
             var items = [" ", " ", " ", " ", " "];
         </script>
         <script type="text/javascript">
-            function update_items(item_array) {
+            function update_items() {
                 var result = "<b>Items:</b><br/>";
-                for (var index = 0; index < item_array.size; index++) {
-                    if (item_array[index] === " ") {
+                for (var index = 0; index < items.length; index++) {
+                    if (items[index] === " ") {
                         continue;
                     } else {
-                        result += item_array[index] + "<br/>";
+                        result += items[index] + "<br/>";
                     }
                 }
                 item_div.innerHTML = result;
@@ -70,7 +70,7 @@
                 if (!has_searched_room) {
                     has_searched_room = !has_searched_room;
                     items[0] = "Coins: 5"
-                    update_items(items);
+                    update_items();
                     below_div.innerHTML = '<button onclick="downstairs()">Go downstairs</button><br/>You find some coins.';
                 }
             }
@@ -85,7 +85,7 @@
                 if (!has_searched_kitchen) {
                     has_searched_kitchen = !has_searched_kitchen;
                     items[1] = "Seeds: 3";
-                    update_items(items);
+                    update_items();
                     below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/><button onclick="search_bedroom()">Go to your room</button><br/>You find some seeds and an apple.<br/>You eat the apple.';
                     div.textContent = "You are no longer hungry.";
                 } else {
@@ -123,7 +123,7 @@
                         items[0] = " ";
                     }
                     items[2] = "Sword";
-                    update_items(items);
+                    update_items();
                     has_sword = true;
                     div.textContent = "You want to go outside.";
                     text_div.innerHTML = '<br/><br/><b>Blacksmith:</b> Thanks for the business!';
