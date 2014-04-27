@@ -103,10 +103,11 @@
                 if (!has_fed_birds) {
                     below_div.innerHTML += " 5 coins";
                 } else {
-                    below_div.innerHTML += " 3 coins<br/><br/><b>Blacksmith:</b> I saw you feed the birds, I always give discounts to kind folks.";
+                    text_div.innerHTML += " 3 coins<br/><br/><b>Blacksmith:</b> I saw you feed the birds, I always give discounts to kind folks.";
                 }
             }
             function clear_blacksmith() {
+                remove_info_text();
                 if (has_sword) {
                     below_div.innerHTML = '<button onclick="outside(), remove_info_text()">Go outside</button>';
                     text_div.innerHTML = '<br/><br/><b>Blacksmith:</b> I have nothing to sell you right now.'
@@ -117,7 +118,7 @@
             function buy_sword() {
                 if (items[0] === "Coins: 5") {
                     if (has_fed_birds) {
-                        items[0] = items[0].length - 1 + "2";
+                        items[0] = "Coins: 2";
                     } else {
                         items[0] = " ";
                     }
