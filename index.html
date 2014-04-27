@@ -25,10 +25,11 @@
                 below_div.innerHTML = '<button onclick="downstairs()">Go downstairs</button><br/><button onclick="search()">Search your room</button>';
             }
             function downstairs() {
-
+                
             }
             function search() {
-
+                below_div.innerHTML = '<button onclick="downstairs()">Go downstairs</button><br/>You find some coins.';
+                item_div.innerHTML += "Coins: 5";
             }
         </script>
         <div id="forest">
