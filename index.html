@@ -57,6 +57,7 @@
                 below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/><button onclick="search_kitchen()">Search the kitchen</button><br/><button onclick="search_bedroom()">Go to your room</button>';
             }
             function search_bedroom() {
+                remove_info_text();
                 if (!has_searched_room) {
                     div.textContent = "You feel drowsy.";
                 } else {
@@ -77,6 +78,7 @@
                 }
             }
             function outside() {
+                remove_info_text();
                 div.textContent = "You need to visit the blacksmith.";
                 below_div.innerHTML = '<button onclick="clear_blacksmith()">Go to the blacksmith</button><br/><button onclick="downstairs()">Go to your house</button><br/><button onclick="feed_birds()">Feed the birds</button>';
                 if (has_fed_birds) {
@@ -88,7 +90,7 @@
                     has_searched_kitchen = !has_searched_kitchen;
                     items[1] = "Seeds: 3";
                     update_items();
-                    below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/><button onclick="search_bedroom()">Go to your room</button><br/>You find some seeds and an apple.<br/>You eat the apple.';
+                    below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/><button onclick="search_bedroom()">Go to your room</button>';
                     text_div.innerHTML = '<br/><br/>You find some seeds and an apple.<br/>You eat the apple.';
                     div.textContent = "You are no longer hungry.";
                 } else {
