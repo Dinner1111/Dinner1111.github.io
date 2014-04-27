@@ -4,15 +4,24 @@
         <div id="text"></div>
         <script type="text/javascript">
             var div = document.getElementById("text");
-            var wait = true;
+            var globalText = "";
             div.textContent = "Hello there.";
-            window.setTimeout(function() { startup() }, 4000)
-            function startup() {
+            window.setTimeout(function() { ask() }, 4000)
+            function ask() {
                 div.textContent = "Are you scared?";
-                window.setTimeout(function() { finish() }, 3000)
+                window.setTimeout(function() { scare() }, 3000)
             }
-            function finish() {
+            function scare() {
                 div.textContent = "You should be.";
+                window.setTimeout(function() { tell() }, 3000)
+            }
+            function tell() {
+                var text = div.textContent = "Would you like to know why?";
+                globalText = text;
+                window.setTimeout(function() { tell2() }, 2000);
+            }
+            function tell2() {
+                div.textContent = globalText + "\n\nI suppose I should tell you anyway.";
             }
         </script>
     </head>
