@@ -75,7 +75,13 @@
                 }
             }
             function clear_blacksmith() {
-                if (items.contains("Sword")) {
+                var sword = false;
+                for (var item in items) {
+                    if (item == "Sword") {
+                        sword = true;
+                    }
+                }
+                if (sword) {
                     below_div = '<button onclick="outside()">Go outside</button><br/><br/><b>Blacksmith:</b> I have nothing to sell you right now.';
                 } else {
                     sword_blacksmith();
