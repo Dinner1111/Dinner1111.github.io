@@ -105,6 +105,13 @@
                 update_items(items);
                 has_sword = true;
             }
+            function feed_birds() {
+                if (items[1] === "Seeds: 3") {
+                    below_div = '<button onclick="clear_blacksmith()">Go to the blacksmith</button><br/><button onclick="downstairs()">Go to your house</button><br/>You have a nice feeling as you feed the birds.'
+                } else {
+                    below_div += '<br/>You don\'t have any food to feed the birds.';
+                }
+            }
         </script>
         <div id="forest">
             <div id="river"></div>
