@@ -119,6 +119,8 @@
                     items[2] = "Sword";
                     update_items(items);
                     has_sword = true;
+                    div.textContent = "You want to go outside.";
+                    text_div.innerHTML = '<br/><br/><b>Blacksmith:</b> Thanks for the business!';
                 } else {
                     text_div.innerHTML = '<br/><br/><b>Blacksmith:</b> Sorry pal, but you need more coins for that.';
                 }
