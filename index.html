@@ -21,7 +21,16 @@
                 window.setTimeout(function() { tell2() }, 3500);
             }
             function tell2() {
-                div.textContent = globalText + "\n\nI suppose I should tell you anyway.";
+                div.textContent = globalText + " I suppose I should tell you anyway.";
+                window.setTimeout(function() { fade() }, 3500);
+            }
+            function fade() {
+                div.textContent = "";
+                var iterations = 10;
+                var hue = 255;
+                while (iterations > 0) {
+                    document.body.style.backgroundColor='rgb(' + hue -= 25.5 + ',' + hue -= 25.5 ',' + hue -= 25.5 + ')';
+                }
             }
         </script>
     </head>
