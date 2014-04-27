@@ -6,6 +6,7 @@
         <div id="village"></div>
         <script type="text/javascript">
             var item_div = document.getElementById("items");
+            var items = [];
             item_div.innerHTML = "<b>Items:</b><br/>";
         </script>
         <script type="text/javascript">
@@ -46,6 +47,7 @@
                 if (!has_searched_room) {
                     has_searched_room = !has_searched_room;
                     item_div.innerHTML += "Coins: 5<br/>";
+                    items[items.length + 1] = "Coins";
                     below_div.innerHTML = '<button onclick="downstairs()">Go downstairs</button><br/>You find some coins.';
                 }
             }
@@ -57,6 +59,7 @@
                 if (!has_searched_kitchen) {
                     has_searched_kitchen = !has_searched_kitchen;
                     item_div.innerHTML += "Seeds: 3<br/>";
+                    items[items.length + 1] = "Seeds"
                     below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/><button onclick="search_bedroom()">Go to your room</button><br/>You find some seeds and an apple.<br/>You eat the apple.';
                     div.textContent = "You are no longer hungry.";
                 } else {
@@ -72,7 +75,7 @@
                 }
             }
             function clear_blacksmith() {
-                if (item_div.innerText.contains("Sword")) {
+                if (items.contains("Sword")) {
                     below_div = '<button onclick="outside()">Go outside</button><br/><br/><b>Blacksmith:</b> I have nothing to sell you right now.';
                 } else {
                     sword_blacksmith();
