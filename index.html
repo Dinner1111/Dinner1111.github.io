@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <div id="status"><br/></div>
+        <div id="status"></div>
         <div id="items"></div>
         <div id="village">
             <div id="home"></div>
@@ -12,6 +12,7 @@
             var item_div = document.getElementById("items");
             item_div.style.position = "absolute";
             item_div.style.left = "200px";
+            item_div.innerHTML = "Items:<br/>";
         </script>
         <script type="text/javascript">
             var div = document.getElementById("status");
