@@ -29,6 +29,11 @@
             var div = document.getElementById("status");
             var below_div = document.getElementById("village");
             var text_div = document.getElementById("text");
+            function remove_info_text() {
+                text_div.textContent = " ";
+            }
+        </script>
+        <script type="text/javascript">
             var has_searched_room = false;
             var has_searched_kitchen = false;
             var has_fed_birds = false;
@@ -90,7 +95,7 @@
                 } else {
                     div.textContent = "You want to go outside.";
                 }
-                below_div.innerHTML = '<button onclick="outside(), div.textContent = \"\"">Go outside</button><br/><br/><b>Shop:</b><br/><button onclick="buy_sword()">Buy a sword</button>';
+                below_div.innerHTML = '<button onclick="outside(), remove_info_text()">Go outside</button><br/><br/><b>Shop:</b><br/><button onclick="buy_sword()">Buy a sword</button>';
                 if (!has_fed_birds) {
                     below_div.innerHTML += " 5 coins";
                 } else {
@@ -99,7 +104,7 @@
             }
             function clear_blacksmith() {
                 if (has_sword) {
-                    below_div.innerHTML = '<button onclick="outside(), div.textContent = \"\"">Go outside</button><br/><br/><b>Blacksmith:</b> I have nothing to sell you right now.';
+                    below_div.innerHTML = '<button onclick="outside(), remove_info_text()">Go outside</button><br/><br/><b>Blacksmith:</b> I have nothing to sell you right now.';
                 } else {
                     sword_blacksmith();
                 }
