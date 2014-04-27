@@ -104,7 +104,8 @@
             }
             function clear_blacksmith() {
                 if (has_sword) {
-                    below_div.innerHTML = '<button onclick="outside(), remove_info_text()">Go outside</button><br/><br/><b>Blacksmith:</b> I have nothing to sell you right now.';
+                    below_div.innerHTML = '<button onclick="outside(), remove_info_text()">Go outside</button>';
+                    text_div.innerHTML = '<br/><br/><b>Blacksmith:</b> I have nothing to sell you right now.'
                 } else {
                     sword_blacksmith();
                 }
