@@ -3,6 +3,7 @@
     <body style="background-color: gray">
         <div id="status"></div>
         <div id="items" style="position: absolute; top: 7px; left: 500px"></div>
+        <div id="text"></div>
         <div id="village"></div>
         <script type="text/javascript">
             var item_div = document.getElementById("items");
@@ -25,6 +26,7 @@
         <script type="text/javascript">
             var div = document.getElementById("status");
             var below_div = document.getElementById("village");
+            var text_div = document.getElementById("text");
             var has_searched_room = false;
             var has_searched_kitchen = false;
             var has_fed_birds = false;
@@ -111,14 +113,14 @@
                     update_items(items);
                     has_sword = true;
                 } else {
-                    below_div.innerHTML += '<br/><br/><b>Blacksmith:</b> Sorry pal, but you need more coins for that.';
+                    text_div.innerHTML = '<br/><br/><b>Blacksmith:</b> Sorry pal, but you need more coins for that.';
                 }
             }
             function feed_birds() {
                 if (items[1] === "Seeds: 3") {
                     below_div.innerHTML = '<button onclick="clear_blacksmith()">Go to the blacksmith</button><br/><button onclick="downstairs()">Go to your house</button><br/>You have a nice feeling as you feed the birds.'
                 } else {
-                    below_div.innerHTML += '<br/>You don\'t have any food to feed the birds.';
+                    text_div.innerHTML = '<br/>You don\'t have any food to feed the birds.';
                 }
             }
         </script>
