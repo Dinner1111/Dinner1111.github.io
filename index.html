@@ -16,6 +16,7 @@
             var div = document.getElementById("status");
             var below_div = document.getElementById("home");
             var hasSearched = false;
+            var fedBirds = false;
             wake();
             function wake() {
                 div.textContent = "You are asleep.";
@@ -23,17 +24,21 @@
             }
             function woken() {
                 div.textContent = "You need to go to the blacksmith.";
-                below_div.innerHTML = '<button onclick="downstairs()">Go downstairs</button><br/><button onclick="search_bedroom()">Search your room</button>';
+                below_div.innerHTML = '<button onclick="downstairs()">Go downstairs</button><br/><button onclick="searchConfirm()">Search your room</button>';
             }
             function downstairs() {
-                below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/><button onclick="search_downstairs()">Search the kitchen</button><br/><button onclick="search_bedroom()">Go to your room</button>';
+                below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/><button onclick="search_kitchen()">Search the kitchen</button><br/><button onclick="search_bedroom()">Go to your room</button>';
             }
             function search_bedroom() {
                 below_div.innerHTML = '<button onclick="downstairs()">Go downstairs</button><br/>';
                 if (!hasSearched) {
+                    below_div.innerHTML += '<button onclick="searchConfirm()">Search your room</button>';
+                }
+            }
+            function searchConfirm() {
+                if (!hasSearched) {
+                    hasSearched = !hasSearched;
                     item_div.innerHTML += "Coins: 5<br/>";
-                    below_div.innerHTML += 'You find some coins.'
-                    hasSearched = true;
                 } else {
                     below_div.innerHTML += 'There is nothing here.'
                 }
@@ -42,7 +47,8 @@
 
             }
             function search_kitchen() {
-
+                below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/>';
+                // seed logic
             }
         </script>
         <div id="forest">
