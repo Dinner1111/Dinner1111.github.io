@@ -50,9 +50,9 @@
                 if (!has_searched_kitchen) {
                     has_searched_kitchen = !has_searched_kitchen;
                     item_div.innerHTML += "Seeds: 3<br/>";
-                    below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/>You find some seeds.';
+                    below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/><button onclick="search_bedroom()">Go to your room</button><br/>You find some seeds.';
                 } else {
-                    below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/>You don\'t find anything.';
+                    below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/><button onclick="search_bedroom()">Go to your room</button><br/>You don\'t find anything.';
                 }
             }
         </script>
