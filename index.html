@@ -4,9 +4,17 @@
         <div id="text"></div>
         <script type="text/javascript">
             var div = document.getElementById("text");
-            div.textContent = "Are you scared?";
-            window.setTimeout(5000);
-            div.textContent = "You should be.";
+            function start() {
+                div.textContent = "Are you scared?";
+            }
+            function stop() {
+                div.textContent = "You should be.";
+            }
         </script>
     </head>
+    <body>
+        <button onclick="start()">Start</button>
+        <br/>
+        <button onclick="stop()">Stop</button>
+    </body>
 </html>
