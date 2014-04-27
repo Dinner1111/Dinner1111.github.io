@@ -18,10 +18,10 @@
             function tell() {
                 var text = div.textContent = "Would you like to know why?";
                 globalText = text;
-                window.setTimeout(function() { tell2() }, 2000);
+                window.setTimeout(function() { tell2() }, 3500);
             }
             function tell2() {
-                div.textContent = globalText + "\n\nI suppose I should tell you anyway.";
+                div.textContent = globalText + "<br/><br/>I suppose I should tell you anyway.";
             }
         </script>
     </head>
