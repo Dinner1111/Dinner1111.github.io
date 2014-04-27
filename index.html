@@ -44,7 +44,7 @@
             }
             function startup_text_1() {
                 div.setTextContent("You see destruction.");
-                additiveText += div.getTextContent();
+                additiveText += div.innerHTML();
                 window.setTimeout(startup_text_2(), 2000);
             }
             function startup_text_2() {
@@ -53,7 +53,7 @@
             }
             function startup_text_3() {
                 div.setTextContent("Why is it that the ones you love most always hurt you?");
-                additiveText = div.getTextContent();
+                additiveText = div.innerHTML();
                 window.setTimeout(startup_text_3(), 3000);
             }
             function startup_text_4() {
