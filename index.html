@@ -4,15 +4,24 @@
         <div id="text"></div>
         <script type="text/javascript">
             var div = document.getElementById("text");
-            div.textContent = "Hello.";
-            var interval = setInterval(function() { startup() }, 5000)
+            var wait = true;
+            div.textContent = "Hello there.";
+            var interval = setInterval(function() { startup() }, 4000)
             function startup() {
                 div.textContent = "Are you scared?";
-                setTimeout(function() { stop() }, 3000);
             }
             function stop() {
+                wait(3000);
                 div.textContent = "You should be.";
-                clearInterval(interval);
+            }
+            function wait(time) {
+                if (wait) {
+                    wait = !wait;
+                    setTimeout(function() { wait() }, time);
+                    return;
+                } else {
+                    wait = !wait;
+                }
             }
         </script>
     </head>
