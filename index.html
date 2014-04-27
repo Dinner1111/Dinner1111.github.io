@@ -48,6 +48,7 @@
                 below_div.innerHTML = '<button onclick="downstairs()">Go downstairs</button><br/><button onclick="search_bedroom_protection()">Search your room</button>';
             }
             function downstairs() {
+                remove_info_text();
                 if (!has_searched_kitchen) {
                     div.textContent = "You are slightly hungry.";
                 } else {
@@ -71,7 +72,8 @@
                     has_searched_room = !has_searched_room;
                     items[0] = "Coins: 5"
                     update_items();
-                    below_div.innerHTML = '<button onclick="downstairs()">Go downstairs</button><br/>You find some coins.';
+                    below_div.innerHTML = '<button onclick="downstairs()">Go downstairs</button>';
+                    text_div.innerHTML = '<br/><br/>You find some coins.'
                 }
             }
             function outside() {
@@ -87,9 +89,11 @@
                     items[1] = "Seeds: 3";
                     update_items();
                     below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/><button onclick="search_bedroom()">Go to your room</button><br/>You find some seeds and an apple.<br/>You eat the apple.';
+                    text_div.innerHTML = '<br/><br/>You find some seeds and an apple.<br/>You eat the apple.';
                     div.textContent = "You are no longer hungry.";
                 } else {
-                    below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/><button onclick="search_bedroom()">Go to your room</button><br/>You don\'t find anything.';
+                    below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/><button onclick="search_bedroom()">Go to your room</button>';
+                    text_div.innerHTML = '<br/><br/>You don\'t find anything.';
                 }
             }
             function sword_blacksmith() {
@@ -110,7 +114,7 @@
                 remove_info_text();
                 if (has_sword) {
                     below_div.innerHTML = '<button onclick="outside(), remove_info_text()">Go outside</button>';
-                    text_div.innerHTML = '<br/><br/><b>Blacksmith:</b> I have nothing to sell you right now.'
+                    text_div.innerHTML = '<br/><br/><b>Blacksmith:</b> I have nothing to sell you right now.';
                 } else {
                     sword_blacksmith();
                 }
