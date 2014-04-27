@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <body style="background-color: gray; font-family: comic sans">
+    <body style="background-color: gray">
         <div id="status"></div>
         <div id="items" style="position: absolute; top: 7px; left: 500px"></div>
-        <div id="village">
-            <div id="home"></div>
-            <div id="blacksmith"></div>
-            <div id="apothicary"></div>
-        </div>
+        <div id="village"></div>
         <script type="text/javascript">
             var item_div = document.getElementById("items");
             item_div.innerHTML = "<b>Items:</b><br/>";
         </script>
         <script type="text/javascript">
             var div = document.getElementById("status");
-            var below_div = document.getElementById("home");
+            var below_div = document.getElementById("village");
             var has_searched_room = false;
             var has_searched_kitchen = false;
-            var fed_birds = false;
+            var has_fed_birds = false;
             wake();
             function wake() {
                 div.textContent = "You are asleep.";
                 below_div.innerHTML = '<button onclick="woken()">Wake up</button>';
             }
             function woken() {
+                div.textContent = "You feel drowsy.";
                 below_div.innerHTML = '<button onclick="downstairs()">Go downstairs</button><br/><button onclick="search_bedroom_protection()">Search your room</button>';
             }
             function downstairs() {
@@ -54,16 +51,31 @@
             }
             function outside() {
                 div.textContent = "You need to visit the blacksmith.";
-
+                below_div.innerHTML = '<button onclick="clear_blacksmith()">Go to the blacksmith</button><br/><button onclick="downstairs()">Go to your house</button><br/><button onclick="feed_birds">Feed the birds</button>';
             }
             function search_kitchen() {
                 if (!has_searched_kitchen) {
                     has_searched_kitchen = !has_searched_kitchen;
                     item_div.innerHTML += "Seeds: 3<br/>";
-                    below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/><button onclick="search_bedroom()">Go to your room</button><br/>You find some seeds and an apple.';
+                    below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/><button onclick="search_bedroom()">Go to your room</button><br/>You find some seeds and an apple.<br/>You eat the apple.';
                     div.textContent = "You are no longer hungry.";
                 } else {
                     below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/><button onclick="search_bedroom()">Go to your room</button><br/>You don\'t find anything.';
+                }
+            }
+            function sword_blacksmith() {
+                below_div = '<button onclick="outside()">Go outside</button><br/><br/><b>Shop:</b><br/><button onclick="clear_blacksmith()">Buy a sword</button>';
+                if (!has_fed_birds) {
+                    below_div += " 5 coins";
+                } else {
+                    below_div += " 3 coins<br/><br/><b>Blacksmith:</b> I saw you feed the birds, I always give discounts to kind folks.";
+                }
+            }
+            function clear_blacksmith() {
+                if (item_div.innerHTML.contains("Sword") {
+                    below_div = '<button onclick="outside()">Go outside</button><br/><br/><b>Blacksmith:</b> I have nothing to sell you right now.';
+                } else {
+                    sword_blacksmith();
                 }
             }
         </script>
