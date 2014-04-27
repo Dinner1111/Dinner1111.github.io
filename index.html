@@ -8,7 +8,7 @@
             startup_text_1()
             function startup_text_1() {
                 div.textContent = "You see destruction.";
-                additiveText += (string) div.innerHTML();
+                additiveText += div.textContent;
                 window.setTimeout(function() { startup_text_2() }, 2000);
             }
             function startup_text_2() {
@@ -17,7 +17,7 @@
             }
             function startup_text_3() {
                 div.textContent = "Why is it that the ones you love most always hurt you?";
-                additiveText = div.innerHTML();
+                additiveText = div.textContent;
                 window.setTimeout(function() { startup_text_4() }, 3000);
             }
             function startup_text_4() {
