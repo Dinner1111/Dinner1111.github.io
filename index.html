@@ -13,7 +13,7 @@
             function update_items(item_array) {
                 var result = item_div;
                 for (var index = 0; index < item_array.length; index++) {
-                    if (item_array[index].toString() === " ") {
+                    if (item_array[index] === " ") {
                         continue;
                     } else {
                         result += item_array[index] + "<br/>";
