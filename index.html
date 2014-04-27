@@ -90,7 +90,7 @@
                 } else {
                     div.textContent = "You want to go outside.";
                 }
-                below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/><br/><b>Shop:</b><br/><button onclick="buy_sword()">Buy a sword</button>';
+                below_div.innerHTML = '<button onclick="outside(), div.textContent = '">Go outside</button><br/><br/><b>Shop:</b><br/><button onclick="buy_sword()">Buy a sword</button>';
                 if (!has_fed_birds) {
                     below_div.innerHTML += " 5 coins";
                 } else {
@@ -99,7 +99,7 @@
             }
             function clear_blacksmith() {
                 if (has_sword) {
-                    below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/><br/><b>Blacksmith:</b> I have nothing to sell you right now.';
+                    below_div.innerHTML = '<button onclick="outside(), div.textContent = ''>Go outside</button><br/><br/><b>Blacksmith:</b> I have nothing to sell you right now.';
                 } else {
                     sword_blacksmith();
                 }
