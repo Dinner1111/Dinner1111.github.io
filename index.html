@@ -5,7 +5,7 @@
         <script type="text/javascript">
             var div = document.getElementById("status");
             var additiveText = "";
-            startup_text_1()
+            startup_text_1();
             function startup_text_1() {
                 div.textContent = "Why are you doing this? What do you see?";
                 additiveText += div.textContent;
@@ -22,6 +22,21 @@
             }
             function startup_text_4() {
                 div.textContent = additiveText + " And yet here you are...";
+                window.setTimeout(function () { fadeOut(255) }, 3000);
+            }
+            function fadeOut(hue) {
+                div.textContent = null;
+                while (hue > 0) {
+                    hue -= 25.5;
+                    document.body.style.backgroundColor="rgb(" + hue + "," + hue + "," +  hue + ")"
+                }
+                fadeIn(0);
+            }
+            function fadeIn(hue) {
+                while (hue < 255) {
+                    hue += 25.5;
+                    document.body.style.backgroundColor="rgb" + hue + "," + hue + "," + hue + ")"
+                }
             }
         </script>
     </head>
