@@ -15,7 +15,7 @@
         <script type="text/javascript">
             function update_items(item_array) {
                 var result = "<b>Items:</b><br/>";
-                for (var index = 0; index < item_array.length; index++) {
+                for (var index = 0; index < item_array.size; index++) {
                     if (item_array[index] === " ") {
                         continue;
                     } else {
@@ -80,7 +80,6 @@
                 if (has_fed_birds) {
                     below_div.innerHTML = below_div.innerHTML.substring(0, below_div.innerHTML.length - 54);
                 }
-                remove_info_text();
             }
             function search_kitchen() {
                 if (!has_searched_kitchen) {
@@ -101,9 +100,10 @@
                 }
                 below_div.innerHTML = '<button onclick="outside(), remove_info_text()">Go outside</button><br/><br/><b>Shop:</b><br/><button onclick="buy_sword()">Buy a sword</button>';
                 if (!has_fed_birds) {
-                    below_div.innerHTML += " 5 coins";
+                    below_div.innerHTML += ' 5 coins';
                 } else {
-                    text_div.innerHTML += " 3 coins<br/><br/><b>Blacksmith:</b> I saw you feed the birds, I always give discounts to kind folks.";
+                    below_.innerHTML += ' 3 coins';
+                    text_div.innerHTML = '<br/><br/><b>Blacksmith:</b> I saw you feed the birds, I always give discounts to kind folks.';
                 }
             }
             function clear_blacksmith() {
@@ -133,7 +133,7 @@
             }
             function feed_birds() {
                 if (items[1] === "Seeds: 3") {
-                    below_div.innerHTML = '<button onclick="clear_blacksmith()">Go to the blacksmith</button><br/><button onclick="downstairs()">Go to your house</button>';
+                    below_div.innerHTML = '<button onclick="clear_blacksmith(), remove_info_text()">Go to the blacksmith</button><br/><button onclick="downstairs(), remove_info_text()">Go to your house</button>';
                     text_div.innerHTML = '<br/><br/>You think of your daughter as you toss your seeds to some birds.';
                     has_fed_birds = true;
                     items[1] = " ";
