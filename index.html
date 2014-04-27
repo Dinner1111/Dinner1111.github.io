@@ -8,7 +8,7 @@
             startup_text_1()
             function startup_text_1() {
                 div.textContent = "You see destruction.";
-                additiveText += div.innerHTML();
+                additiveText += (string) div.innerHTML();
                 window.setTimeout(function() { startup_text_2() }, 2000);
             }
             function startup_text_2() {
