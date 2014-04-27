@@ -7,21 +7,21 @@
             var additiveText = "";
             startup_text_1()
             function startup_text_1() {
-                div.setTextContent("You see destruction.");
+                div.textContent("You see destruction.");
                 additiveText += div.innerHTML();
                 window.setTimeout(function() { startup_text_2() }, 2000);
             }
             function startup_text_2() {
-                div.setTextContent(additiveText + " You see... her.");
+                div.textContent(additiveText + " You see... her.");
                 window.setTimeout(function() { startup_text_3() }, 2750);
             }
             function startup_text_3() {
-                div.setTextContent("Why is it that the ones you love most always hurt you?");
+                div.textContent("Why is it that the ones you love most always hurt you?");
                 additiveText = div.innerHTML();
                 window.setTimeout(function() { startup_text_4() }, 3000);
             }
             function startup_text_4() {
-                div.setTextConent(additiveText + " And yet here you are.");
+                div.textConent(additiveText + " And yet here you are.");
             }
         </script>
     </head>
