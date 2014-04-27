@@ -8,7 +8,7 @@
             var interval = setInterval(function() { startup() }, 5000)
             function startup() {
                 div.textContent = "Are you scared?";
-                stop();
+                setTimeout(function() { stop() }, 3000);
             }
             function stop() {
                 div.textContent = "You should be.";
