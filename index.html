@@ -27,15 +27,15 @@
             function fadeOut(hue) {
                 div.textContent = null;
                 while (hue > 0) {
-                    hue -= 25.5;
-                    document.body.style.backgroundColor="rgb(" + hue + "," + hue + "," +  hue + ")"
+                    hue -= 0.5;
+                    document.body.style.backgroundColor="rgb(" + hue + "," + hue + "," +hue + ")"
                 }
                 fadeIn(0);
             }
             function fadeIn(hue) {
                 while (hue < 255) {
-                    hue += 25.5;
-                    document.body.style.backgroundColor="rgb" + hue + "," + hue + "," + hue + ")"
+                    hue += 0.5;
+                    document.body.style.backgroundColor="rgb(" + hue + "," + hue + "," + hue + ")"
                 }
             }
         </script>
