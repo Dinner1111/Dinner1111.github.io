@@ -9,16 +9,16 @@
             function startup_text_1() {
                 div.setTextContent("You see destruction.");
                 additiveText += div.innerHTML();
-                window.setTimeout(startup_text_2(), 2000);
+                window.setTimeout(function() { startup_text_2() }, 2000);
             }
             function startup_text_2() {
                 div.setTextContent(additiveText + " You see... her.");
-                window.setTimeout(startup_text_3(), 2750);
+                window.setTimeout(function() { startup_text_3() }, 2750);
             }
             function startup_text_3() {
                 div.setTextContent("Why is it that the ones you love most always hurt you?");
                 additiveText = div.innerHTML();
-                window.setTimeout(startup_text_3(), 3000);
+                window.setTimeout(function() { startup_text_4() }, 3000);
             }
             function startup_text_4() {
                 div.setTextConent(additiveText + " And yet here you are.");
