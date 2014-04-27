@@ -77,6 +77,9 @@
             function outside() {
                 div.textContent = "You need to visit the blacksmith.";
                 below_div.innerHTML = '<button onclick="clear_blacksmith()">Go to the blacksmith</button><br/><button onclick="downstairs()">Go to your house</button><br/><button onclick="feed_birds">Feed the birds</button>';
+                if (has_fed_birds) {
+                    below_div.innerHTML = below_div.innerHTML.length - 54;
+                }
                 remove_info_text();
             }
             function search_kitchen() {
@@ -128,6 +131,7 @@
                 }
             }
             function feed_birds() {
+                text_div.innerHTML = 'hi';
                 if (items[1] === "Seeds: 3") {
                     below_div.innerHTML = '<button onclick="clear_blacksmith()">Go to the blacksmith</button><br/><button onclick="downstairs()">Go to your house</button>';
                     text_div.innerHTML = '<br/><br/>You think of your daughter as you toss seeds to some birds.';
