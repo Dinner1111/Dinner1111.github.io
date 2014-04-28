@@ -136,7 +136,7 @@
                 has_sword = true;
                 div.textContent = "You want to go outside.";
                 text_div.innerHTML = '<br/><br/><b>Blacksmith:</b> Thanks for the business!';
-                clear_blacksmith();
+                below_div.innerHTML = '<button onclick="outside()">Go outside</button>';
             }
             function feed_birds() {
                 if (items[1] === "Seeds: 3") {
