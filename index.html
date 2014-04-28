@@ -113,7 +113,6 @@
                 }
             }
             function clear_blacksmith() {
-                remove_info_text();
                 if (has_sword) {
                     below_div.innerHTML = '<button onclick="outside(), remove_info_text()">Go outside</button>';
                     text_div.innerHTML = '<br/><br/><b>Blacksmith:</b> I have nothing to sell you right now.';
@@ -128,14 +127,15 @@
                     } else {
                         items[0] = " ";
                     }
-                    items[2] = "Sword";
-                    update_items();
-                    has_sword = true;
-                    div.textContent = "You want to go outside.";
-                    text_div.innerHTML = '<br/><br/><b>Blacksmith:</b> Thanks for the business!';
                 } else {
                     text_div.innerHTML = '<br/><br/><b>Blacksmith:</b> Sorry pal, but you need more coins for that.';
+                    return;
                 }
+                items[2] = "Sword";
+                update_items();
+                has_sword = true;
+                div.textContent = "You want to go outside.";
+                text_div.innerHTML = '<br/><br/><b>Blacksmith:</b> Thanks for the business!';
             }
             function feed_birds() {
                 if (items[1] === "Seeds: 3") {
