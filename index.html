@@ -60,12 +60,12 @@
             }
             function downstairs() {
                 remove_info_text();
+                div.textContent = "You want to go outside.";
+                below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/><button onclick="search_bedroom()">Go to your room</button>';
                 if (!has_searched_kitchen) {
                     div.textContent = "You are slightly hungry.";
-                } else {
-                    div.textContent = "You want to go outside.";
+                    below_div.innerHTML = '<button onclick="search_kitchen()">Search the kitchen</button>';
                 }
-                below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/><button onclick="search_kitchen()">Search the kitchen</button><br/><button onclick="search_bedroom()">Go to your room</button>';
             }
             function search_bedroom() {
                 remove_info_text();
