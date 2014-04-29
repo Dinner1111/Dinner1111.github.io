@@ -95,7 +95,7 @@
                     div.textContent = "You need to visit the blacksmith.";
                 } else {
                     div.textContent = "You feel the spur of adventure in your step";
-                    below_div.innerHTML += '<button onclick="forest(), remove_info_text()">Go to the forest</button>';
+                    below_div.innerHTML += '<button onclick="forest()">Go to the forest</button>';
                 }
                 if (has_fed_birds) {
                     below_div.innerHTML = below_div.innerHTML.substring(0, below_div.innerHTML.length - 54);
@@ -103,7 +103,7 @@
             }
             function search_kitchen() {
                 if (!has_searched_kitchen) {
-                    has_searched_kitchen = !has_searched_kitchen;
+                    has_searched_kitchen = true;
                     items[1] = "Seeds: 3";
                     update_items();
                     below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/><button onclick="search_bedroom()">Go to your room</button>';
