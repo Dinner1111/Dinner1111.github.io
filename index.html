@@ -2,7 +2,7 @@
 <html>
     <body style="background-color: gray">
         <div><b>Status:</b></div>
-        <div style="position: absolute; top: 320px"><b>Info:</b></div>
+        <div style="position: absolute; top: 290px"><b>Info:</b></div>
         <div id="status" style="position: absolute; top: 8px; left: 60px"></div>
         <div id="items" style="position: absolute; top: 8px; left: 500px"></div>
         <div id="text" style="position: absolute; top: 300px"></div>
@@ -39,7 +39,7 @@
             function die(function_name) {
                 div.textContent = "You are dead.";
                 below_div.innerHTML = '<button onclick="wake()">Play again</button><br/><button onclick="function_name">Continue from last location</button>';
-                text_div.innerHTML = '<br/><br/>You have died.';
+                text_div.innerHTML = 'You have died.';
             }
         </script>
         <div id="village"></div>
@@ -85,7 +85,7 @@
                     items[0] = "Coins: 5"
                     update_items();
                     below_div.innerHTML = '<button onclick="downstairs()">Go downstairs</button>';
-                    text_div.innerHTML = '<br/><br/>You find some coins.';
+                    text_div.innerHTML = 'You find some coins.';
                 }
             }
             function outside() {
@@ -107,11 +107,11 @@
                     items[1] = "Seeds: 3";
                     update_items();
                     below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/><button onclick="search_bedroom()">Go to your room</button>';
-                    text_div.innerHTML = '<br/><br/>You find some seeds and an apple.<br/>You eat the apple.';
+                    text_div.innerHTML = 'You find some seeds and an apple.<br/>You eat the apple.';
                     div.textContent = "You are no longer hungry.";
                 } else {
                     below_div.innerHTML = '<button onclick="outside()">Go outside</button><br/><button onclick="search_bedroom()">Go to your room</button>';
-                    text_div.innerHTML = '<br/><br/>You don\'t find anything.';
+                    text_div.innerHTML = 'You don\'t find anything.';
                 }
             }
             function sword_blacksmith() {
@@ -125,13 +125,13 @@
                     below_div.innerHTML += ' 5 coins';
                 } else {
                     below_div.innerHTML += ' 3 coins';
-                    text_div.innerHTML = '<br/><br/><b>Blacksmith:</b> I saw you feed the birds, I always give discounts to kind folks.';
+                    text_div.innerHTML = '<b>Blacksmith:</b> I saw you feed the birds, I always give discounts to kind folks.';
                 }
             }
             function clear_blacksmith() {
                 if (has_sword) {
                     below_div.innerHTML = '<button onclick="outside(), remove_info_text()">Go outside</button>';
-                    text_div.innerHTML = '<br/><br/><b>Blacksmith:</b> I have nothing to sell you right now.';
+                    text_div.innerHTML = '<b>Blacksmith:</b> I have nothing to sell you right now.';
                 } else {
                     sword_blacksmith();
                 }
@@ -144,25 +144,25 @@
                         items[0] = " ";
                     }
                 } else {
-                    text_div.innerHTML = '<br/><br/><b>Blacksmith:</b> Sorry pal, but you need more coins for that.';
+                    text_div.innerHTML = '<b>Blacksmith:</b> Sorry pal, but you need more coins for that.';
                     return;
                 }
                 items[2] = "Sword";
                 update_items();
                 has_sword = true;
                 div.textContent = "You want to go outside.";
-                text_div.innerHTML = '<br/><br/><b>Blacksmith:</b> Thanks for the business!';
+                text_div.innerHTML = '<b>Blacksmith:</b> Thanks for the business!';
                 below_div.innerHTML = '<button onclick="outside()">Go outside</button>';
             }
             function feed_birds() {
                 if (items[1] === "Seeds: 3") {
                     below_div.innerHTML = '<button onclick="clear_blacksmith(), remove_info_text()">Go to the blacksmith</button><br/><button onclick="downstairs(), remove_info_text()">Go to your house</button>';
-                    text_div.innerHTML = '<br/><br/>You think of your daughter as you toss your seeds to some birds.';
+                    text_div.innerHTML = 'You think of your daughter as you toss your seeds to some birds.';
                     has_fed_birds = true;
                     items[1] = " ";
                     update_items();
                 } else {
-                    text_div.innerHTML = '<br/><br/>You don\'t have any food to feed the birds.';
+                    text_div.innerHTML = 'You don\'t have any food to feed the birds.';
                 }
             }
         </script>
@@ -178,7 +178,7 @@
                 div.textContent = "You feel slightly inspired by the clearing\'s light";
                 if (!has_found_axe) {
                     below_div += '<button onclick="find_axe(), remove_info_text()>Search the clearing</button>';
-                    text_div.innerHTML = '<br/><br/>You find a small clearing in the woods.';
+                    text_div.innerHTML = 'You find a small clearing in the woods.';
                 } else if (has_found_axe && !has_made_camp) {
                     below_div.innerHTML += '<button onclick="fight_wraiths(), remove_info_text()">Move on</button>';
                 } else {
@@ -186,7 +186,7 @@
                 }
             }
             function find_axe() {
-                text_div.innerHTML = '<br/><br/>You find a small axe in a tree stump.';
+                text_div.innerHTML = 'You find a small axe in a tree stump.';
                 items[3] = "Small Axe";
                 update_items();
                 forest_start();
@@ -194,15 +194,15 @@
             function fight_wraiths() {
                 div.textContent = "You are mildly frightened.";
                 below_div.innerHTML = '<button onclick="wraith_finish()">Fight the wraiths</button>';
-                text_div.innerHTML = '<br/><br/>You find four wraiths!';
+                text_div.innerHTML = 'You find four wraiths!';
             }
             function wraith_finish() {
                 div.textContent = "You miss your daughter.";
                 below_div.innerHTML = '<button onclick="make_camp()">Make camp</button>';
-                text_div.innerHTML = '<br/><br/>You need to make camp for the night.';
+                text_div.innerHTML = 'You need to make camp for the night.';
             }
             function make_camp() {
-                text_div.innerHTML = '<br/><br/>You gather leaves chop some fallen logs for a fire.';
+                text_div.innerHTML = 'You gather leaves chop some fallen logs for a fire.';
                 window.setTimeout(find_flint(), 3000);
             }
             function find_flint() {
@@ -244,7 +244,7 @@
             }
             function stoke_fire() {
                 div.textContent = "You wonder if you will ever see your daughter again.";
-                text_div.innerHTML = '<br/><br/>You add some wood and stoke the fire.<br/>You watch the flames intently.';
+                text_div.innerHTML = 'You add some wood and stoke the fire.<br/>You watch the flames intently.';
                 var amount;
                 if (items[6].length === 7) {
                     amount = parseInt(items[6].substring(6, 7));
@@ -269,24 +269,24 @@
                     find_berries();
                 }
                 if (items[4] === "Rocks: 30" && items[5] === "Berries: 20") {
-                    text_div.innerHTML = '<br/><br/>You don\'t find anything.';
+                    text_div.innerHTML = 'You don\'t find anything.';
                 }
                 function find_rocks() {
                     rocks = true;
-                    text_div.innerHTML = '<br/><br/>You find a few rocks. They might be useful.';
+                    text_div.innerHTML = 'You find a few rocks. They might be useful.';
                 }
                 function find_berries() {
                     berries = true;
-                    text_div.innerHTML = '<br/><br/>You search a bush and find some berries. Hope they aren\'t poisonous.';
+                    text_div.innerHTML = 'You search a bush and find some berries. Hope they aren\'t poisonous.';
                 }
                 if (rocks && berries) {
-                    text_div.innerHTML = '<br/><br/>You find some rocks and berries.';
+                    text_div.innerHTML = 'You find some rocks and berries.';
                 }
                 update_below_div();
             }
             function chop_wood() {
                 div.textContent = "The forest is silent; you feel watched.";
-                text_div.innerHTML = '<br/><br/>You find a fallen tree and start cutting the trunk.';
+                text_div.innerHTML = 'You find a fallen tree and start cutting the trunk.';
                 var amount;
                 if (items[6].length === 7) {
                     amount = parseInt(items[6].substring(6, 7));
@@ -300,12 +300,12 @@
             function sleep() {
                 has_slept = true;
                 div.textContent = "You remember how your daughter loved astronomy.";
-                text_div.innerHTML = '<br/><br/>You can barely see the moon through the thick leaf canopy.';
+                text_div.innerHTML = 'You can barely see the moon through the thick leaf canopy.';
             }
             function find_river() {
                 div.textContent = "You need to cross the river.";
                 below_div.innerHTML = '<button onclick="camp()">Go to the camp</button><br/>';
-                text_div.innerHTML = '<br/><br/>You find a wide, gentle river.';
+                text_div.innerHTML = 'You find a wide, gentle river.';
                 if (items[6].substring(6, 7) === 1 || items[6].substring(6, 7) <= 3) {
                     below_div.innerHTML += '<button onclick="made_raft()">Make a raft</button>';
                 } else {
@@ -313,7 +313,7 @@
                 }
                 function made_raft() {
                     below_div.innerHTML = '<button onclick="camp()">Go to the camp</button><br/><button onclick="cross_river()">Cross the river</button>';
-                    text_div.innerHTML = '<br/><br/>You make a sturdy raft.';
+                    text_div.innerHTML = 'You make a sturdy raft.';
                     var amount;
                     if (items[6].length === 7) {
                         amount = parseInt(items[6].substring(6, 7));
@@ -332,16 +332,16 @@
                 } else {
                     below_div.innerHTML += '<button onclick="grasslands_start()">Exit the forest</button>';
                 }
-                text_div.innerHTML = '<br/><br/>You disembark your raft on the far side of the river.';
+                text_div.innerHTML = 'You disembark your raft on the far side of the river.';
             }
             function find_vampire() {
                 if (items[6].substring(6, 7) === 1 || items[6].substring(6, 7) <= 3) {
                     div.textContent = "You are scared.";
                     below_div.innerHTML = '<button onclick="craft_stakes()">Craft stakes</button>';
-                    text_div.innerHTML = '<br/><br/>You spot a vampire sucking the blood of a deer.';
+                    text_div.innerHTML = 'You spot a vampire sucking the blood of a deer.';
                 } else {
                     div.textContent = "You are in a panic.";
-                    text_div.innerHTML = '<br/><br/>There is a sharp pain in your back.<br/>As you slowly fall to the ground, you feel teeth sink into your neck.<br/>';
+                    text_div.innerHTML = 'There is a sharp pain in your back.<br/>As you slowly fall to the ground, you feel teeth sink into your neck.<br/>';
                     window.setTimeout(kill(), 1500);
                     function kill() {
                         text_div.innerHTML += 'Your eyes flutter one final time. You see a vampire kneel next to you.';
@@ -351,7 +351,7 @@
                 function craft_stakes() {
                     div.textContent = "You\'re nervous.";
                     below_div.innerHTML = '<button onclick="kill_vampire()">Kill the vampire</button>';
-                    text_div.innerHTML = '<br/><br/>You sharpen some wood into a stake with your axe.';
+                    text_div.innerHTML = 'You sharpen some wood into a stake with your axe.';
                     var amount;
                     if (items[6].length === 7) {
                         amount = parseInt(items[6].substring(6, 7));
