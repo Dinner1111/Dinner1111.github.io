@@ -1,5 +1,5 @@
 body { 
-    background-color: #252525; 
+    background: #252525 url(/images/background.png); 
     font-family: "Courier New", monospace;
     text-align: center;
 }
